@@ -9,8 +9,8 @@ Post.destroy_all
 Comment.destroy_all
 
 posts = Post.create([
-    {title: "Too Much Tuna", content: "This is too much tuna!"},
-    {title: "Look At This Photograph", content: "How aboot this photograph of Tim Horton's, eh?"},
+    {title: "Too Much Steak", content: "This is too much tuna!"},
+    {title: "Special meal in D.C", content: "How aboot this photograph of Tim Horton's, eh?"},
     {title: "Canadians Like Tuna", content: "We gave Nickelback too much tuna!"}
 ])
 
