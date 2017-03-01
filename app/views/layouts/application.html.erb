@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Scribble</title>
+  <title>GOOD MEAL</title>
   <%= csrf_meta_tags %>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,16 +9,21 @@
 </head>
 
 <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <!-- <%= image_tag('scribble.png') %>
-  <%= link_to "Sign Up", new_user_registration_path %> -->
+  <%= video_tag "awesome Sony ultra hd food 4K Demo video 2016", autoplay: :autoplay, loop: :loop, mute: :mute, class: "video" %>
+  <main>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <!-- <%= image_tag('scribble.png') %>
+    <%= link_to "Sign Up", new_user_registration_path %> -->
 
-  <% if !current_user %>
-      <%= link_to "Sign Up", new_user_registration_path %>
-      <%= link_to "Sign In", new_user_session_path %>
-  <% end %>
-  <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
-  <%= yield %>
+    <% if !current_user %>
+        <%= link_to "Sign Up", new_user_registration_path %>
+        <%= link_to "Sign In", new_user_session_path %>
+    <% end %>
+    <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+
+
+    <%= yield %>
+  </main>
 </body>
 </html>

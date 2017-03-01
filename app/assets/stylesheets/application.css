@@ -14,26 +14,36 @@
  *= require_self
  */
 
- video#bgvid {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -100;
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-    background: url(polina.jpg) no-repeat;
-    background-size: cover;
+
+video {
+ /*position: absolute;*/
+ /*top: 50%; left: 50%;*/
+ z-index: 0;
+ width: 100%;
+ height: 100%;
+ /*width: auto;
+ height: auto;*/
+ /*transform: translate(-50%, -50%);*/
+}
+main {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-/*
+
+
+h2{
+  font-family: cursive;
+  color: red;
+}
+
+
+
  body {
-   width: 600px;
+   position: relative;
+   width: 1280px;
    margin: 20px auto;
  }
  img {
@@ -91,4 +101,4 @@
  .add {
    float: right;
    margin-top: -55px;
- }*/
+ }
