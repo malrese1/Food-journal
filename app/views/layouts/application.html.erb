@@ -1,28 +1,24 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>SO GOOD</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Scribble</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<body>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <!-- <%= image_tag('scribble.png') %>
+  <%= link_to "Sign Up", new_user_registration_path %> -->
 
-<video playsinline autoplay muted loop poster="polina.jpg" id="video-bg-elem">
-    <source src="awesome Sony ultra hd food 4K Demo video 2016.webm" type="video/webm">
-    <source src="awesome Sony ultra hd food 4K Demo video 2016.mp4" type="video/mp4">
-</video>
-
-
-
-    <%= current_user.email if current_user %>
-    <%= link_to "Sign Up", new_user_registration_path %>
-    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-    <%= link_to "Sign in", new_user_session_path %>
-    <%= yield %>
-  </body>
+  <% if !current_user %>
+      <%= link_to "Sign Up", new_user_registration_path %>
+      <%= link_to "Sign In", new_user_session_path %>
+  <% end %>
+  <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+  <%= yield %>
+</body>
 </html>
