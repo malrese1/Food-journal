@@ -15,7 +15,39 @@
  */
 
 
-video {
+ a {
+  color: #E890AF;
+ }
+
+
+ label{
+   color: white;
+ }
+
+ h2{
+   color: white;
+ }
+
+ body {
+
+ }
+
+ video {
+   position: absolute;
+   top: 50;
+   left: 50;
+ }
+
+ main {
+   z-index: 1;
+   text-align: center;
+   position: relative;
+
+ }
+
+
+
+/*video {
  /*position: absolute;*/
  /*top: 50%; left: 50%;*/
  z-index: 0;
@@ -25,7 +57,7 @@ video {
  height: auto;*/
  /*transform: translate(-50%, -50%);*/
 }
-main {
+/*main {
   z-index: 1;
   position: absolute;
   top: 0;
