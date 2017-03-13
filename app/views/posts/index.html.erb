@@ -3,6 +3,8 @@
   <% @posts.each do |post| %>
     <div>
       <h2><%= link_to post.title, post_path(post) %></h2>
+      <p>by <%= post.user.email %></p>
+      <%# Now that posts are associated with users, you can list the author for every post / comment %>
       <p>Last Update: <%= post.updated_at %></p>
       <p><%= post.content %></p>
     </div>

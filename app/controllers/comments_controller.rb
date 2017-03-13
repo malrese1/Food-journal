@@ -7,18 +7,24 @@ class CommentsController < ApplicationController
 
   def create
     @post = Post.find(params[:post_id])
-    @comment = @post.comments.create(comment_params)
+    @comment = @post.comments.create(comment_params.merge(user: current_user))
     redirect_to post_path(@post)
   end
 
   def edit
     @post = Post.find(params[:post_id])
     @comment = Comment.find(params[:id])
+    unless @comment.user == current_user
+      redirect_to :back
+    end
   end
 
   def update
     @post = Post.find(params[:post_id])
     @comment = Comment.find(params[:id])
+    unless @comment.user == current_user
+      redirect_to :back
+    end
     @comment.update(comment_params)
     redirect_to post_path(@post)
   end
@@ -26,6 +32,9 @@ class CommentsController < ApplicationController
   def destroy
     @post = Post.find(params[:post_id])
     @comment = Comment.find(params[:id])
+    unless @comment.user == current_user
+      redirect_to :back
+    end
     @comment.destroy
     redirect_to post_path(@post)
   end

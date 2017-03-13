@@ -46,6 +46,10 @@
    position: absolute;
    top: 50;
    left: 50;
+   width: 100vw;
+   /*This is to ensure that the video extends across the page on different-sized
+   screens. See this article on how to ensure perfect fit across all screen sizes:
+   https://slicejack.com/fullscreen-html5-video-background-css/*/
  }
 
  main {
