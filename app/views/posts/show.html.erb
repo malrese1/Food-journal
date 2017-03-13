@@ -1,18 +1,25 @@
 <%= link_to "Back", posts_path %>
 <article>
   <h2><%= @post.title %></h2>
+  <p>by <%= @post.user.email %></p>
   <p>Last Update: <%= @post.updated_at %></p>
   <p><%= @post.content %></p>
-  <%= link_to "Edit Post", edit_post_path(@post) %>
-  <%= link_to "Delete Post", post_path(@post), method: :delete %>
+  <% if @post.user == current_user %>
+    <%= link_to "Edit Post", edit_post_path(@post) %>
+    <%= link_to "Delete Post", post_path(@post), method: :delete %>
+  <% end %>
+  <%# And now with user associations, you can set up user permissions. Like only
+  allowing the owner of the post to edit / delete it (if statement above) %>
   <h4>Comments</h4>
   <%= link_to "Add New Comment", new_post_comment_path(@post) %>
   <% @post.comments.each do |comment| %>
     <div>
-      <p>Last Update: <%= comment.updated_at %></p>
+      <p><%= comment.user.email %> - <%= comment.updated_at %></p>
       <p><%= comment.content %></p>
-      <%= link_to "Edit Comment", edit_post_comment_path(@post, comment) %>
-      <%= link_to "Delete Comment", post_path(@post), method: :delete %>
+      <% if comment.user == current_user %>
+        <%= link_to "Edit Comment", edit_post_comment_path(@post, comment) %>
+        <%= link_to "Delete Comment", post_path(@post), method: :delete %>
+      <% end %>
     </div>
   <% end %>
 </article>
